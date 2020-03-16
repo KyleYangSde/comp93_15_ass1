@@ -1,24 +1,9 @@
-#-------------------------------------------------------------------------
-#
-# Makefile--
-#    Makefile for tutorial
-#
-# By default, this builds against an existing PostgreSQL installation
-# (the one identified by whichever pg_config is first in your path).
-# Within a configured source tree, you can say "make NO_PGXS=1 all"
-# to build using the surrounding source tree.
-#
-# IDENTIFICATION
-#    src/tutorial/Makefile
-#
-#-------------------------------------------------------------------------
-
-MODULES = complex funcs
-DATA_built = advanced.sql basics.sql complex.sql funcs.sql syscat.sql
+MODULES = pname
+DATA_built = pname.sql
 
 ifdef NO_PGXS
-subdir = src/tutorial
-top_builddir = ../..
+subdir = ../testing
+top_builddir = ../postgresql-12.1
 include $(top_builddir)/src/Makefile.global
 include $(top_srcdir)/src/makefiles/pgxs.mk
 else
